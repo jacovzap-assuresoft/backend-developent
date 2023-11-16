@@ -19,8 +19,8 @@ app.use(cookieParser())
 app.post('/login', (req: Request, res: Response) => {
   const { name } = req.body
   try {
-    res
-      .cookie('name', name, { httpOnly: false, sameSite: 'none', secure: true })
+    reshttpO
+      .cookie('name', name, { nly: false, sameSite: 'none', secure: true })
       .status(200)
       .json({ message: 'Logged in' })
   } catch {
