@@ -1,0 +1,200 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Animals API",
+        "description": "Descripcion",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000"
+        }
+    ],
+    "paths": {
+        "/api/animals": {
+            "get": {
+                "tags": [
+                    "Animals"
+                ],
+                "summary": "Get all animals",
+                "operationId": "9298b5c948954e7b0caa43e71418ab07",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "example": 1
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "Max"
+                                                    },
+                                                    "species": {
+                                                        "type": "string",
+                                                        "example": "Dog"
+                                                    },
+                                                    "birthday": {
+                                                        "type": "string",
+                                                        "example": "12-10-2015"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "example": "A good dog"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2023-02-23T00:09:16.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "example": "2023-02-23T12:33:45.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error getting animals"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Error message"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Animals"
+                ],
+                "summary": "Register a new animal",
+                "description": "Create new animal",
+                "operationId": "b519b5827c433726c425a9a964799c85",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Max"
+                                    },
+                                    "specie": {
+                                        "type": "string",
+                                        "example": "Dog"
+                                    },
+                                    "birthday": {
+                                        "type": "string",
+                                        "example": "12-10-2015"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "A good dog"
+                                    },
+                                    "created_at": {
+                                        "type": "string",
+                                        "example": "2023-02-23T00:09:16.000000Z"
+                                    },
+                                    "updated_at": {
+                                        "type": "string",
+                                        "example": "2023-02-23T12:33:45.000000Z"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Max"
+                                        },
+                                        "specie": {
+                                            "type": "string",
+                                            "example": "Dog"
+                                        },
+                                        "birthday": {
+                                            "type": "string",
+                                            "example": "12-10-2015"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "example": "A good dog"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2023-02-23T00:09:16.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2023-02-23T12:33:45.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error creating animal"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Error message"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
